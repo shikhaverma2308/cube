@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+  
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      /* z-index: 0; */
+      color: black;
+      background-image:url(wp2747953.webp);
+      background-position: center;
+      background-repeat:repeat;
+      background-size: contain;
+    
+    }
+
+    .scene {
+      width: 250px;
+      height: 250px;
+      perspective: 1000px;
+    }
+
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotate 20s infinite linear;
+    }
+
+    .face {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 0 15px #ff6347;
+      cursor: pointer;
+      background-size: cover;
+      background-position: center;
+      transition: background 0.3s;
+      color: white;
+      opacity: 0.8;
+    }
+
+    .face:hover {
+      opacity: 1;
+      object-position: 2rcap;
+      background-origin: 22 sis over is my is time is fubction is my name us eror 44b s;
+    }
+
+    .front  { transform: rotateY(0deg) translateZ(125px); 
+        background-image: url('love.jpeg'); }
+    .back   { transform: rotateY(180deg) translateZ(135px); background-image: url('brakup.jpeg'); }
+    .right  { transform: rotateY(90deg) translateZ(125px); background-image:url('sadness.jpeg'); }
+    .left   { transform: rotateY(-90deg) translateZ(125px); background-image: url('alone.webp'); }
+    .top    { transform: rotateX(90deg) translateZ(125px); background-image: url('let them go.jpeg'); }
+    .bottom { transform: rotateX(-90deg) translateZ(125px); background-image: url('heals.jpeg'); color:black; }
+
+    @keyframes rotate {
+      0%   { transform: rotateX(0deg) rotateY(0deg); }
+      100% { transform: rotateX(360deg) rotateY(360deg); }
+      
+    }
+
+    .meaning-box {
+      margin-top:160px;
+      font-size: 4rem;
+      color: #ff6347;
+      text-align: center;
+      
+      font-family: "Dancing Script", cursive;
+      font-optical-sizing: auto;
+      font-weight:500;
+      font-style: normal;
+    
+      max-width: 80%;
+      /* font-style: italic; */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scene">
+    <div class="cube">
+      <div class="face front" onclick="('Love feels like a dream... until it fades.')">Love</div>
+      <div class="face back" onclick="showMeaning('Breakups are the price of feeling deeply.')">Breakup</div>
+      <div class="face right" onclick="showMeaning('Sadness is the shadow of true love lost.')">Sadness</div>
+      <div class="face left" onclick="showMeaning('Loneliness is the quiet after the storm.')">Lonely</div>
+      <div class="face top" onclick="showMeaning('Sometimes you must let go to grow.')">Let her Go</div>
+      <div class="face bottom" onclick="showMeaning('Healing takes time, but it does happen.')">Healing</div>
+    
+    </div>
+  </div>
+
+  <div class="meaning-box" id="meaningBox">
+    Click any face to reveal its message.
+  </div>
+
+  <script>
+    function showMeaning(text) {
+      document.getElementById("meaningBox").innerText = text;
+    }
+  </script>
+
+</body>
+</html>
